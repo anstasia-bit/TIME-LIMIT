@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+       <title>TIME LIMIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+   <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+      <link href="time%20limit.css" rel="stylesheet" media="screen">
+      <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+  </head>
+  <body>
+
+<div class="main">
+  <div class="bar">
+     <a href="index.html"><i class=" fas fa-arrow-left fa-2x bar__icon "></i></a> 
+    </div>
+    
+  <div class="menu">
+      
+    <div class="menu__item" id="0-0">
+        <a href="p1.html"><i class=" fas fa-home fa-2x menu__icon "></i></a>
+      <div class="menu__content"><span class="menu__span">تأمل</span></div>
+        
+    </div>
+    <div class="menu__item" id="1-0">
+        <a href="p2.html"><i class=" fas fa-paint-brush fa-2x menu__icon "></i></a>
+      <div class="menu__content"><span class="menu__span">رسومات</span></div>
+    </div>
+    <div class="menu__item" id="0-1">
+        <a href="p3.html"><i class=" fas fa-question fa-2x menu__icon "></i></a>
+      <div class="menu__content"><span class="menu__span">سؤال + جواب</span></div>
+    </div>
+    <div class="menu__item" id="1-1">
+        <a href="p4.html"><i class=" fas fa-image fa-2x menu__icon "></i></a>
+      <div class="menu__content"><span class="menu__span">تأمل * صورة</span></div>
+    </div>
+    <div class="menu__item" id="0-2">
+        <a href="p5.html"><i class=" fas fa-bible fa-2x menu__icon "></i></a>
+      <div class="menu__content"><span class="menu__span">الكتاب المقدس</span>></div>
+    </div>
+    <div class="menu__item" id="1-2">
+        <a href="p6.html"><i class=" fas fa-info fa-2x menu__icon "></i></a>
+      <div class="menu__content"><span class="menu__span">معلومات عامة</span></div>
+    </div>
+    <div class="is-active" id="current"></div>
+  </div>
+</div>
+      
+      
+      
+      
+      
+   <script>   /* Const */
+const menuItem = document.querySelectorAll(".menu__item");
+const currentItem = document.querySelector("#current");
+const mov = 140;
+/* Func */
+let getItem = (event) => {
+    let x = event.currentTarget.id.slice("-")[0];
+    let y = event.currentTarget.id.slice("-")[2];
+
+    currentItem.style.left = `${ x * mov }px`;
+    setTimeout( () =>  currentItem.style.top = `${ y * mov }px`, 200 ) ;
+
+}
+/* Main */
+let mainFunction = (event) => {
+    for (var i = 0; i < menuItem.length; i++) {
+        menuItem[i].addEventListener("click", getItem);
+    }
+}
+
+window.addEventListener("load", mainFunction);
+
+      </script>
+      
+      
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+    
+  </body>
+</html>
